@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-clr: white;
+  --color-headline-clr: black;
+  --color-paragraph-clr: #6f6f6f;
+  --color-captions-clr: #485c11;
+  --color-link-clr: black;
+  --color-divider-clr: #e9e9e9;
+  --color-accent-clr-1: #485c11;
+  --color-accent-clr-2: #dfecc6;
+  --color-accent-clr-3: #8e9c78;
+  --color-accent-clr-5: #6f6f6f;
+  --color-accent-clr-6: #929292;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./fonts/DMSans-VariableFont_opsz\,wght.ttf')
+    format('truetype-variations');
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'Crimson Text';
+  src: url('./fonts/CrimsonText-Regular.ttf');
+  font-display: swap;
+  font-weight: normal;
+}
+
+@layer components {
+  .discover-more-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-link-clr);
+    background-color: var(--color-accent-clr-2);
+    border-radius: calc(infinity * 1px);
+    padding-inline: 22px;
+    padding-block: 14px;
+    transition:
+      color 0.4s,
+      background-color 0.4s;
+    &:hover {
+      @media (hover: hover) {
+        color: white;
+        background-color: var(--color-accent-clr-3);
+      }
+    }
+  }
+
+  .display-text {
+    font-family: 'Crimson Text';
+    font-size: 76px;
+    line-height: 85%;
+    letter-spacing: -4.5%;
+    font-weight: normal;
+  }
+
+  .heading1 {
+    font-family: 'Crimson Text';
+    font-size: 50px;
+    line-height: 95%;
+    letter-spacing: -3%;
+    font-weight: normal;
+  }
+
+  .heading2 {
+    font-family: 'Crimson Text';
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -4%;
+    font-weight: normal;
+  }
+
+  .heading3 {
+    font-family: 'Crimson Text';
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -3%;
+    font-weight: normal;
+  }
+
+  .paragraph {
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: -0.5%;
+    font-weight: normal;
+  }
+}
+
+#root {
+  font-family: 'DM Sans';
+  background-color: var(--color-bg-clr);
+  width: 100%;
+  min-width: 375px;
+  max-width: 1500px;
+  min-height: 100vh;
+  margin: auto;
+  padding-inline: 16px;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 800px) {
+  #root {
+    padding-inline: 40px;
+  }
+
+  .display-text {
+    font-size: 140px;
+    line-height: 80%;
+    letter-spacing: -5%;
+  }
+
+  .heading1 {
+    font-size: 54px;
+    line-height: 90%;
+  }
+
+  .heading2 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .display-text {
+    font-size: 160px;
+    line-height: 85%;
+  }
+
+  .heading1 {
+    font-size: 60px;
+  }
+
+  .heading2 {
+    line-height: 105%;
+  }
+}

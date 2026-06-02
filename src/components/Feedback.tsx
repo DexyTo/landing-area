@@ -1,10 +1,11 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function FeedBack() {
   return (
     <Section className='grid gap-10 pb-25 md:pb-30 xl:grid-cols-2 xl:gap-5'>
       <img
-        src='/feedbackImg.jpg'
+        src={getAssetPath('feedbackImg.jpg')}
         alt='Сфера между другими сферами'
         className='w-full h-full object-cover rounded-3xl'
       />

@@ -1,3 +1,4 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function TrustedBy() {
@@ -10,7 +11,7 @@ export default function TrustedBy() {
         {logoList.map((logo, ind) => (
           <li key={logo} className='flex w-37.5 h-21 xl:w-38.5'>
             <img
-              src={`/trustedIcons/${logo}`}
+              src={getAssetPath(`trustedIcons/${logo}`)}
               alt={`Лого ${ind}`}
               className='object-none'
             />

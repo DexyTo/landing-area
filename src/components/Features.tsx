@@ -1,3 +1,4 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function Features() {
@@ -36,7 +37,7 @@ export default function Features() {
         </a>
       </div>
       <img
-        src='/featureImage.jpg'
+        src={getAssetPath('featureImage.jpg')}
         alt='Изображение трех белых цилиндрических колонн на фоне теплого кремового цвета'
         className='w-full h-full object-cover rounded-4xl'
       />

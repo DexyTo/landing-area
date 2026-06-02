@@ -1,3 +1,4 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function Benefits() {
@@ -19,7 +20,7 @@ export default function Benefits() {
             className='border-t border-divider-clr py-10'
           >
             <img
-              src={`/benefitsIcons/${benefit.icon}`}
+              src={getAssetPath(`benefitsIcons/${benefit.icon}`)}
               alt={`Иконка ${ind}`}
               className='w-6 h-6 mb-6'
             />
@@ -33,7 +34,7 @@ export default function Benefits() {
         ))}
       </ul>
       <img
-        src='/mountainImage.png'
+        src={getAssetPath('mountainImage.png')}
         alt='Изображение гор'
         className='w-full h-150 object-cover rounded-4xl'
       />

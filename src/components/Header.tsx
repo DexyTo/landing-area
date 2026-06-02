@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import butterIcon from '/butterIcon.svg';
-import closeIcon from '/closeIcon.svg';
 import { smoothScroll } from '../utils/scrolling';
+import { getAssetPath } from '../utils/paths';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const headerBtnIcon = isMenuOpen ? closeIcon : butterIcon;
+  const headerBtnIcon = isMenuOpen ? 'closeIcon.svg' : 'butterIcon.svg';
 
   return (
     <>
@@ -21,7 +20,12 @@ export default function Header() {
                   key={link.href}
                   className='text-sm font-bold text-nowrap leading-[1.4] transition-colors duration-500 hover:text-accent-clr-5'
                 >
-                  <a href={link.href} onClick={() => smoothScroll(link.href, 1000)}>{link.name}</a>
+                  <a
+                    href={link.href}
+                    onClick={() => smoothScroll(link.href, 1000)}
+                  >
+                    {link.name}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -32,7 +36,7 @@ export default function Header() {
           >
             <span className='mr-0.5'>Learn More</span>
             <img
-              src='/arrow.png'
+              src={getAssetPath('arrow.png')}
               alt='стрелка'
               className='inline-block group-hover:-translate-y-1.5'
             />
@@ -48,7 +52,11 @@ export default function Header() {
               className='absolute right-0 top-0'
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <img src={headerBtnIcon} alt='' className='w-6 h-6 object-none' />
+              <img
+                src={getAssetPath(headerBtnIcon)}
+                alt=''
+                className='w-6 h-6 object-none'
+              />
             </button>
           </div>
           <nav className={`${!isMenuOpen ? 'hidden' : ''} mx-5 mt-14.5 mb-8`}>
@@ -58,7 +66,12 @@ export default function Header() {
                   key={link.href}
                   className='text-sm font-bold text-nowrap leading-[1.4] border-t border-divider-clr py-7.5 transition-colors duration-500 hover:text-accent-clr-5'
                 >
-                  <a href={link.href} onClick={() => smoothScroll(link.href, 1000)}>{link.name}</a>
+                  <a
+                    href={link.href}
+                    onClick={() => smoothScroll(link.href, 1000)}
+                  >
+                    {link.name}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -68,7 +81,7 @@ export default function Header() {
             >
               <span className='mr-0.5'>Learn More</span>
               <img
-                src='/arrow.png'
+                src={getAssetPath('arrow.png')}
                 alt='стрелка'
                 className='inline-block group-hover:-translate-y-1.5'
               />

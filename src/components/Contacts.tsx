@@ -1,3 +1,4 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function Contacts() {
@@ -14,7 +15,7 @@ export default function Contacts() {
       >
         <span className='mr-0.5'>Learn More</span>
         <img
-          src='/arrow.png'
+          src={getAssetPath('arrow.png')}
           alt='стрелка'
           className='inline-block group-hover:-translate-y-1.5'
         />

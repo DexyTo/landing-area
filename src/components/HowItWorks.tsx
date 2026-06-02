@@ -1,3 +1,4 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function HowItWorks() {
@@ -24,7 +25,7 @@ export default function HowItWorks() {
         ))}
       </ul>
       <img
-        src='/mountainTrailImg.png'
+        src={getAssetPath('mountainTrailImg.png')}
         alt='горная тропа'
         className='w-full min-h-150 object-cover rounded-3xl mb-10'
       />

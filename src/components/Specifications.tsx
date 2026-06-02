@@ -1,3 +1,4 @@
+import { getAssetPath } from '../utils/paths';
 import Section from './Section';
 
 export default function Specifications() {
@@ -33,7 +34,11 @@ export default function Specifications() {
                   key={item}
                   className={`flex items-center gap-2 h-20 ${ind > 0 ? 'border-r-[0.5px]' : ''} border-b-[0.5px] border-divider-clr overflow-auto pl-7.5`}
                 >
-                  <img src='/mark.svg' alt='галочка' className='w-3.5 h-3.5' />
+                  <img
+                    src={getAssetPath('mark.svg')}
+                    alt='галочка'
+                    className='w-3.5 h-3.5'
+                  />
                   <p className='text-xs text-headline-clr leading-[1.4]'>
                     {item}
                   </p>
